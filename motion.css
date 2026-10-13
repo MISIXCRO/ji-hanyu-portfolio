@@ -1,0 +1,64 @@
+/* finesse · brand · A=existing-prismatic-ink/lavender · B=Microsoft-YaHei
+ * C=existing-portfolio · D=masked-type-opening+editorial-reveal/stagger
+ * E=original-projects · SOUL=8 SPECTACLE=7 DENSITY=3
+ * Authored state is always the composed, readable final frame. */
+:root { --motion-settle:cubic-bezier(.32,0,.18,1); }
+
+/* Replace the earlier short fade entrances, including the no-JS presentation. */
+.landing-content h1,.landing-kicker,.landing-description,.landing-cta,
+.intro h1,.work-image,.lab-visual { animation:none; }
+
+.motion-line {
+  display:block;
+  overflow:clip;
+  padding-block:.15em;
+  margin-block:-.15em;
+}
+.motion-type {
+  display:block;
+  transform-origin:0 85%;
+  /* Do not force nowrap: Chinese case headings still wrap on narrow screens. */
+}
+.landing-content h1 .motion-type { white-space:nowrap; }
+.motion-opening {
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:grid;
+  grid-template-rows:repeat(3,1fr);
+  pointer-events:none;
+  overflow:clip;
+}
+.motion-curtain-window { overflow:clip; }
+.motion-curtain {
+  height:100%;
+  background:var(--canvas);
+  border-bottom:1px solid var(--line);
+  transform-origin:0 0;
+}
+/* Nothing above the cylinder is transformed, faded or clipped by this layer.
+ * Its own 3D assemble starts only after the work heading has arrived. */
+.circular-carousel[data-entrance-held="true"] .cc-stage { visibility:hidden; }
+.next-image { overflow:clip; }
+
+@supports(animation-timeline:view()) {
+  @media(min-width:801px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+    .motion-enabled .next-image img {
+      animation:editorial-image-pan linear both;
+      animation-timeline:view(block);
+      animation-range:entry 0% exit 100%;
+    }
+    @keyframes editorial-image-pan {
+      from { transform:translateY(-2%) scale(1.055); }
+      to { transform:translateY(2%) scale(1.055); }
+    }
+  }
+}
+/* Browser preference changes must not leave a paused entrance or veil behind. */
+@media(prefers-reduced-motion:reduce) {
+  .motion-opening { display:none; }
+  .motion-type { transform:none!important; }
+  [data-motion-state] { clip-path:none!important; transform:none!important; }
+  .motion-enabled .next-image img { animation:none!important; transform:none; }
+  .circular-carousel[data-entrance-held="true"] .cc-stage { visibility:visible; }
+}

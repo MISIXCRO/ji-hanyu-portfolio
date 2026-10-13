@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://misixcro.github.io/ji-hanyu-portfolio/sitemap.xml
