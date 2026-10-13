@@ -8,9 +8,9 @@ HTML / CSS / JavaScript 静态网站；包含本地图片、旋转作品画廊�
 
 仓库名：`ji-hanyu-portfolio`。在仓库 Settings → Pages 中选择 **Deploy from a branch**，分支 **codex/portfolio-publish**、目录 **/(root)**，保存后等待部署完成。
 
-预计站点地址：https://misixcro.github.io/ji-hanyu-portfolio/
+站点地址：https://misixcro.github.io/ji-hanyu-portfolio/
 
-该地址只有在仓库推送并成功启用 Pages 后才可用。免费托管不代表所有中国大陆网络都稳定可达；正式放入简历前需在关闭VPN的手机流量和Wi-Fi上测试首页、项目页及PDF下载。
+GitHub Pages已开启。免费托管不代表所有中国大陆网络都稳定可达；正式放入简历前需在关闭VPN的手机流量和Wi-Fi上测试首页、项目页及PDF下载。
 
 ## 文件
 
@@ -26,4 +26,4 @@ HTML / CSS / JavaScript 静态网站；包含本地图片、旋转作品画廊�
 
 作品及个人内容归冀涵宇所有。第三方组件说明及许可证见 `THIRD_PARTY_NOTICES.txt`。本仓库没有另行授予作品集内容的整体开源许可。
 
-简历PDF内的旧网站链接和二维码，需在新站实际部署验证后更新；不要将尚未上线的预计网址用于正式投递。
+下载简历已更新为建筑设计版，链接及二维码指向本站。
